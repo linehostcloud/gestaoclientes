@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row content">
+        <div class="col-sm-6 blockPd4">
+            <div class="alert alert-danger" role="alert">
+                <b>Deseja realmente remover esse cliente?</b><br>
+                Após a remoção não será possível fazer a recuperação dos dados.
+            </div>
+            <p><b>ID</b>: {{ cliente.id }}</p>
+            <p><b>Nome</b>: {{ cliente.nome }}</p>
+            <p><b>E-mail</b>: {{ cliente.email }}</p>
+            <p><b>Telefone Fixo</b>: {{ cliente.telefone|default_if_none:"" }}</p>
+            <p><b>WhatsApp</b>: {{ cliente.celular|default_if_none:"" }}</p>
+            <p><b>CNPJ</b>: {{ cliente.cnpj|default_if_none:"" }}</p>
+            <p><b>CPF</b>: {{ cliente.cpf|default_if_none:"" }}</p>
+            <hr>
+                <h4 class="pb-4"><b>Endereço</b></h4>
+                <p><b>Rua:</b>{{ cliente.endereco.rua }}, {{ cliente.endereco.numero }}</p>
+                <p><b>Complemento:</b>{{ cliente.endereco.complemento }}</p>
+                <p><b>Bairro:</b>{{ cliente.endereco.bairro }}</p>
+                <p><b>Cidade:</b>{{ cliente.endereco.cidade }}</p>
+                <p><b>Estado:</b>{{ cliente.endereco.estado }}</p>
+                <hr>
+            <form method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-danger btn-lg" value="{{ btn_acao }}">
+                <a href="{% url 'listando_clientes' %}" class="btn btn-secondary btn-lg">Voltar</a>
+            </form>
+        </div>
+
+    <div class="col-sm-6 boxPub bgDefault">
+        <h1>Box Pub</h1>
+    </div>
+    </div>
+</div>
+{% endblock %}

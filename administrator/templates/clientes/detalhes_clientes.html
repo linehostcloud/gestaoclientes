@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row content">
+        <div class="col-sm-12 resetPadding">
+            <div class="titulo-internas">
+                <h2 class="bgDefault d-flex align-items-center">
+                    <span class="bgWhite p-4 me-4"><b>#{{ cliente.id }}</b></span><b>{{ cliente.nome }}</b>
+                </h2>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="detalhes-cliente blockPd3">
+                <p><b>E-mail</b>: {{ cliente.email }}</p>
+                <p><b>Telefone Fixo</b>: {{ cliente.telefone|default_if_none:"" }}</p>
+                <p><b>WhatsApp</b>: {{ cliente.celular|default_if_none:""  }}</p>
+                <p><b>CNPJ</b>: {{ cliente.cnpj|default_if_none:""  }}</p>
+                <p><b>CPF</b>: {{ cliente.cpf|default_if_none:"" }}</p>
+                <hr>
+                <h4 class="pb-4"><b>Endereço</b></h4>
+                <p><b>Logradouro</b>: {{ cliente.endereco.rua }}, {{ cliente.endereco.numero }}</p>
+                <p><b>Complemento</b>: {{ cliente.endereco.complemento|default_if_none:"" }}</p>
+                <p><b>Bairro</b>: {{ cliente.endereco.bairro|default_if_none:"" }}</p>
+                <p><b>Cidade</b>: {{ cliente.endereco.cidade|default_if_none:"" }}</p>
+                <p><b>Estado</b>: {{ cliente.endereco.estado|default_if_none:"" }}</p>
+                <hr>
+                <a href="{% url 'atualizar_cliente' cliente.id %}" class="btn btn-default btn-lg">Editar</a>
+                <a href="{% url 'listando_clientes' %}" class="btn btn-secondary btn-lg">Voltar</a>
+                <a href="{% url 'remover_cliente' cliente.id %}" class="btn btn-danger btn-lg">Excluir</a>
+            </div>
+        </div>
+
+    <div class="col-sm-6 boxPub bgWhite">
+        <h1><b>Box Pub</b></h1>
+    </div>
+    </div>
+</div>
+{% endblock %}
