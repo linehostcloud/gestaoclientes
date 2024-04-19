@@ -11,9 +11,6 @@ from administrator.views.views_clientes import (
 
 urlpatterns = [
 
-    # Redirecionando
-    path('', RedirectView.as_view(), name='listando_clientes'),
-
     # Clientes
     path('cadastrar_cliente/', ClienteCreateView.as_view(), name='cadastrar_cliente'),
     path('listando_clientes/', ClienteListView.as_view(), name='listando_clientes'),
