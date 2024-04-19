@@ -45,15 +45,12 @@ class Endereco(models.Model):
 
 # CLIENTES
 class Cliente(models.Model):
-    DOCUMENTO_CHOICES = (
-        ('CPF', 'CPF'),
-        ('CNPJ', 'CNPJ'),
-    )
     nome = models.CharField(max_length=100, null=False, blank=False)
     sobrenome = models.CharField(max_length=100, null=False, blank=False)
     email = models.CharField(max_length=100, null=False, blank=False)
     celular = models.CharField(max_length=16, null=True, blank=True)
-    documento = models.CharField(max_length=4, choices=DOCUMENTO_CHOICES, null=True, blank=True)
+    cnpj = models.CharField(max_length=18, null=True, blank=True)
+    cpf = models.CharField(max_length=14, null=True, blank=True)
     endereco = models.OneToOneField(to=Endereco, on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
