@@ -10,14 +10,14 @@
         <div class="col-sm-12 resetPadding">
             <div class="titulo-internas">
                 <h2 class="bgDefault d-flex align-items-center">
-                    <span class="bgWhite p-4 me-4"><b>#{{ cliente.id }}</b></span><b>{{ cliente.nome }}</b>
+                    <span class="bgWhite p-4 me-4"><b>#{{ cliente.id }}</b></span>
+                    <b>{{ cliente.nome }} {{ cliente.sobrenome }}</b>
                 </h2>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="detalhes-cliente blockPd3">
                 <p><b>E-mail</b>: {{ cliente.email }}</p>
-                <p><b>Telefone Fixo</b>: {{ cliente.telefone|default_if_none:"" }}</p>
                 <p><b>WhatsApp</b>: {{ cliente.celular|default_if_none:""  }}</p>
                 <p><b>CNPJ</b>: {{ cliente.cnpj|default_if_none:""  }}</p>
                 <p><b>CPF</b>: {{ cliente.cpf|default_if_none:"" }}</p>

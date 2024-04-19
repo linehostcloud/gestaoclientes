@@ -49,7 +49,7 @@ class ClienteListView(ListView):
 class ClienteUpdateView(UpdateView):
     model = Cliente
     form_class = ClienteForm
-    template_name = 'clientes/formulario_clientes.html'
+    template_name = 'clientes/formulario_cliente.html'
     success_url = reverse_lazy('listando_clientes')
 
     def get_context_data(self, **kwargs):

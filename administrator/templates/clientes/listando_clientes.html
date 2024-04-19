@@ -41,7 +41,7 @@
                             {% for cliente in object_list %}
                             <tr>
                                 <td><b>{{ cliente.id }}</b></td>
-                                <td><a href="{% url 'detalhes_cliente' pk=cliente.id %}" class="linkTable">{{ cliente.nome }}</a></td>
+                                <td><a href="{% url 'detalhes_cliente' pk=cliente.id %}" class="linkTable">{{ cliente.nome }} {{ cliente.sobrenome }}</a></td>
                                 <td>{{ cliente.email }}</td>
                                 <td>{{ cliente.celular|default_if_none:"" }}</td>
                                 <td>{{ cliente.cpf|default_if_none:"" }}</td>
