@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+
+:root {
+
+    /* Background */
+    --bg-default: #212530;
+    --bg-secondary: #424254;
+    --bg-white: #e8caa4;
+    --bg-danger: #cc2a41;
+    --bg-green: #64908a;
+    --bg-gray: #ececec;
+
+    /* Textos */
+    --text-color-default: #212530;
+
+    /* Fontes */
+    --font-default: "Maven Pro", sans-serif;
+}
+
+body {
+    font-family: var(--font-default);
+    background-color: var(--bg-gray);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.bgDefault {
+    background-color: var(--bg-default);
+    color: #ffffff;
+}
+
+.bgWhite {
+    background-color: var(--bg-white);
+    color: var(--text-color-default);
+}
+
+.linkTable {
+    text-decoration: none;
+    color: var(--text-color-default);
+    border-bottom: 1px dashed;
+}
+
+.linkTable:hover {
+    color: var(--bg-green);
+}
+
+.btn-default {
+    background-color: var(--bg-default);
+    color: #ffffff;
+    border-radius: 0;
+    border: 0;
+}
+
+.btn-default:hover {
+    background-color: var(--bg-white);
+    color: var(--text-color-default);
+    border: 0;
+}
+
+.btn-secondary {
+    background-color: var(--bg-green);
+    color: #ffffff;
+    border-radius: 0;
+    border: 0;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-default);
+    color: #ffffff;
+    border: 0;
+}
+
+.btn-danger {
+    background-color: var(--bg-danger);
+    color: #ffffff;
+    border-radius: 0;
+    border: 0;
+}
+
+.btn-danger:hover {
+    background-color: var(--bg-default);
+    color: #ffffff;
+    border: 0;
+}
+
+.btn-white {
+    background-color: var(--bg-white);
+    color: var(--text-color-default);
+    border-radius: 0;
+    border: 0;
+}
+
+.btn-white:hover {
+    background-color: var(--bg-secondary);
+    color: #ffffff;
+    border: 0;
+}
+
+header {
+    background: var(--bg-default);
+    padding: 3vh 0;
+    color: #ffffff;
+}
+
+.menuPrincipal .navbar-nav .nav-link {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.content {
+    background-color: #ffffff;
+    margin: 4vh 0 0 0;
+    box-shadow: 0 0 20px #c7c7c7;
+}
+
+.titulo-internas {
+    background-color: var(--bg-default);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.titulo-secao {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.titulo-internas span {
+    background-color: var(--bg-white);
+    padding: 1vh 3vh;
+    margin-right: 1vw;
+    font-size: 2rem;
+}
+
+.titulo-internas h5 {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.titulo-internas .link-titulo {
+    text-decoration: none;
+}
+
+.mt-8 {
+    margin-top: 8%;
+}
+
+.mt-12 {
+    margin-top: 15%;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 0;
+    padding: 4vh;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    /*box-shadow: 0 0 20px #c7c7c7;*/
+}
+
+.iconeCard {
+    position: absolute;
+    right: 2vw;
+    font-size: 3rem;
+    top: 1vh;
+    opacity: 0.2;
+}
+
+.resetPadding {
+    padding: 0;
+}
+
+.blockPd1 {
+    padding: 1rem;
+}
+
+.blockPd2 {
+    padding: 2rem;
+}
+
+.blockPd3 {
+    padding: 3rem;
+}
+
+.blockPd4 {
+    padding: 4rem;
+}
+
+.boxPub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    flex: 1;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+.table>:not(caption)>*>* {
+    padding: 1rem .5rem;
+}
+
+.title_pages {
+    font-weight: 900;
+}
+
+.btn-acoes a {
+    padding: .25rem 0rem;
+}
+
+#id_numero {
+    float: left;
+    width: 30%;
+    margin-right: 15px;
+}
+
+#id_complemento {
+    width: 67%;
+}
+
+.status {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.boxPrice {
+    padding: 2rem;
+    text-align: center;
+}
+.form-control,
+.form-select {
+    border-radius: 0;
+    min-height: 60px;
+}
+
+.form-label {
+    font-weight: bold !important;
+}
+
+.formLogin {
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0 10vh;
+    right: 0;
+}
+.pubLogin {
+    background: var(--bg-default);
+    background: url("../img/bg-code-login.jpg") center center no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+}
+
+.current-menu a {
+    font-weight: 900;
+    color: rgba(255,255,255,1) !important;
+    opacity: 1;
+}
+.current-submenu a {
+    font-weight: 900;
+}
+
+.paginacao {
+    background-color: #ececec;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: end;
+}
+
+.step-links {
+    display: flex;
+    align-items: center;
+}
+
+.paginacao a {
+    background-color: var(--bg-default);
+    padding: .5rem 1rem;
+    color: #ffffff;
+    margin: 0 .2rem;
+}
+
+.paginacao .current {
+    margin: 0 1rem;
+}
+
+.btn60 {
+    padding: 1.125rem 2rem;
+}
+
+footer {
+    background: var(--bg-default);
+    padding: 2vh 0;
+    color: #ffffff;
+    margin-top: 5vh;
+}
