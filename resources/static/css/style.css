@@ -254,6 +254,7 @@ p {
 
 .form-label {
     font-weight: bold !important;
+    font-size: 15px;
 }
 
 .formLogin {

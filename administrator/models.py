@@ -58,3 +58,37 @@ class Cliente(models.Model):
 
     def __str__(self):
         return f'{self.nome} {self.sobrenome}'
+
+
+# FLUXO DE CAIXA - CATEGORIA
+class FluxoCategoria(models.Model):
+    nome = models.CharField(max_length=100, null=False, blank=False)
+
+
+# FLUXO DE CAIXA - TIPO DE TRANSAÇÃO
+class FluxoTransacao(models.Model):
+    nome = models.CharField(max_length=100, null=False, blank=False)
+
+
+# FLUXO DE CAIXA - FORMA DE PAGAMENTO
+class FluxoFormaPagamento(models.Model):
+    nome = models.CharField(max_length=100, null=False, blank=False)
+
+
+# FLUXO DE CAIXA - FAVORECIDO
+class FluxoFavorecido(models.Model):
+    nome = models.CharField(max_length=100, null=False, blank=False)
+
+
+# FLUXO DE CAIXA - MODELO
+class FluxoCaixa(models.Model):
+    transacao = models.ForeignKey(to=FluxoTransacao, on_delete=models.SET_NULL, null=True, blank=True)
+    nome = models.CharField(max_length=100, null=False, blank=False)
+    data_movimentacao = models.DateField(null=False, blank=False)
+    valor = models.DecimalField(max_digits=10, decimal_places=2, null=False, blank=False)
+    cliente = models.ForeignKey(to=Cliente, on_delete=models.SET_NULL, null=True, blank=True)
+    categoria = models.ForeignKey(to=FluxoCategoria, on_delete=models.SET_NULL, null=True, blank=True)
+    forma_pagamento = models.ForeignKey(to=FluxoFormaPagamento, on_delete=models.SET_NULL, null=True, blank=True)
+    favorecido = models.ForeignKey(to=FluxoFavorecido, on_delete=models.SET_NULL, null=True, blank=True)
+    pago = models.BooleanField(default=False)
+    descricao = models.TextField(null=True, blank=True)
