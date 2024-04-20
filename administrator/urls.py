@@ -10,7 +10,13 @@ from administrator.views.views_clientes import (
 
 from administrator.views.views_fluxocaixa import (
     FluxoCaixaCreateView,
-    FluxoCaixaListView
+    FluxoCaixaListView,
+    FluxoCaixaDeleteView,
+    FluxoFormPagamentoCreateView,
+    FluxoFavorecidoCreateView,
+    FluxoCategoriaView,
+    FluxoTransacaoView,
+    FluxoCaixaUpdateView
 )
 
 urlpatterns = [
@@ -25,4 +31,10 @@ urlpatterns = [
     # Pedidos (Fluxo de Caixa)
     path('cadastrar_movimentacao/', FluxoCaixaCreateView.as_view(), name='cadastrar_movimentacao'),
     path('listando_movimentacoes/', FluxoCaixaListView.as_view(), name='listando_movimentacoes'),
+    path('formas_de_pagamento/', FluxoFormPagamentoCreateView.as_view(), name='formas_de_pagamento'),
+    path('favorecidos/', FluxoFavorecidoCreateView.as_view(), name='favorecidos'),
+    path('categorias/', FluxoCategoriaView.as_view(), name='categorias'),
+    path('tipos_transacao/', FluxoTransacaoView.as_view(), name='tipos_transacao'),
+    path('atualizar_movimentacao/<int:pk>', FluxoCaixaUpdateView.as_view(), name='atualizar_movimentacao'),
+    path('excluir_movimentacao/<int:pk>', FluxoCaixaDeleteView.as_view(), name='excluir_movimentacao'),
 ]

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark menuPrincipal">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="navbar-nav {% if request.resolver_match.view_name == 'listando_clientes' %}current-menu{% endif %}">
+                <a href="{% url 'listando_clientes' %}" class="nav-link">Clientes</a>
+            </li>
+
+            <li class="navbar-nav {% if request.resolver_match.view_name == 'listando_movimentacoes' %}current-menu{% endif %}">
+                <a href="{% url 'listando_movimentacoes' %}" class="nav-link">Movimentações</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="" class="nav-link dropdown-toggle" id="dropdownProdutos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Cadastros
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownProdutos">
+
+                    <li class="{% if request.resolver_match.view_name == 'favorecidos' %}current-submenu{% endif %}">
+                        <a href="{% url 'favorecidos' %}" class="dropdown-item">Favorecidos</a>
+                    </li>
+
+                    <li class="{% if request.resolver_match.view_name == 'categorias' %}current-submenu{% endif %}">
+                        <a href="{% url 'categorias' %}" class="dropdown-item">Categorias</a>
+                    </li>
+
+                    <li class="{% if request.resolver_match.view_name == 'tipos_transacao' %}current-submenu{% endif %}">
+                        <a href="{% url 'tipos_transacao' %}" class="dropdown-item">Tipos de Transação</a>
+                    </li>
+
+                    <li class="{% if request.resolver_match.view_name == 'formas_de_pagamento' %}current-submenu{% endif %}">
+                        <a href="{% url 'formas_de_pagamento' %}" class="dropdown-item">Formas de Pagamento</a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

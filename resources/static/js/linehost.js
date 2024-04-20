@@ -53,5 +53,8 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .catch(error => console.error(error)); // Mostra erros no console se ocorrerem.
     });
+
 });
+
+
 
